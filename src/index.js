@@ -19,7 +19,7 @@ app.use(
 app.use(cors());
 
 //Connect to db
-mongoose.connect('mongodb+srv://bahetyshyam:bahetyshyam@cluster0-thubj.mongodb.net/test?retryWrites=true&w=majority',
+mongoose.connect(process.env.DB_CONNECT,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
