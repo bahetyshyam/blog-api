@@ -2,7 +2,6 @@ require('dotenv').config()
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import routes from './services/routes';
 import mongoose from 'mongoose';
 import authRoute from './routes/auth';
 import blogsRoute from './routes/blogs';
@@ -32,8 +31,6 @@ mongoose.connect(process.env.DB_CONNECT,
 //Route Middleware
 app.use('/api/users', authRoute);
 app.use('/api/blogs', blogsRoute);
-app.get('/blogs', routes.getBlogs);
-app.post('/blogs', routes.postBlogs);
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
